@@ -18,5 +18,10 @@ public class StudentService {
 
     public void addStudents(Student student) {
         System.out.println(student);
+        studentRepository.save(student);
+    }
+
+    public void deleteStudent(Integer id) {
+        studentRepository.deleteById(id);
     }
 }

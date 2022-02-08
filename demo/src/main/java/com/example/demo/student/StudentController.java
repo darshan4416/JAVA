@@ -23,12 +23,19 @@ public class StudentController {
     }
 
     @PostMapping
-    public void registerNewStudent(@RequestBody Student student){
-
+    public void addStudents(@RequestBody Student student){
          studentService.addStudents(student);
-
-
     }
+
+    @DeleteMapping("{id}")
+    public String deleteStudent(@PathVariable Integer id){
+
+        studentService.deleteStudent(id);
+
+        return "successfully deleted";
+    }
+
+
 
 
 }
